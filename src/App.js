@@ -9,6 +9,7 @@ import './App.css'
 import CircularProgressbarComponent from './components/circular-progressbar/circular-progressbar-component'
 import Slider from './components/slider-element/slider'
 import images from './images'
+import SwiperElement from "./components/swiper-element";
 
 const todoItem = (handleUpdate, handleDelete) => todo => <Div key={todo.id}>
   <Span>{todo.name}</Span>
@@ -68,7 +69,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <Slider slides={images} />
+      {/*<Slider slides={images} />*/}
+      <SwiperElement/>
       <CircularProgressbarComponent
         width={'184px'}
         image={image}
