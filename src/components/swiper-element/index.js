@@ -5,7 +5,7 @@ import './index.css'
 import 'swiper/css/swiper.css'
 
 const Slideshow = props => {
-  const { slidesPerView, height, slides, spaceBetween, loop, slidesPerGroup, autoplay,parallax } = props.properties
+  const { slidesPerView, height, slides, spaceBetween, loop, slidesPerGroup, autoplay, parallax } = props.properties
   const swiper = useRef(false)
   const story = useRef(false)
 
@@ -39,18 +39,17 @@ const Slideshow = props => {
 
   return (
     <SwiperContainer height={height || 100} className="swiper-container" ref={swiper}>
-      <div className="container-story-wrapper swiper-wrapper">
+      <div className="swiper-wrapper">
         {slides.map((slide, i) => (
 
           <SlideDiv className="swiper-slide" key={slide + i} img={slide.img} >
             {
-              parallax && <>
-            <div class="title" data-swiper-parallax="-300">Slide 3</div>
-            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-            <div class="text" data-swiper-parallax="-100">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
-            </div>
-            </>
+              parallax && <Info>
+            <Title className="title" data-swiper-parallax="-300">Slide 3</Title>
+            <Description className="text" data-swiper-parallax="-100">
+              <p> Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
+            </Description>
+            </Info>
           }
           </SlideDiv>
         ))}
@@ -73,6 +72,14 @@ const SlideDiv = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    text-align: center;
+    font-size: 18px;
+    /*background: #fff;*/
+    background-color: #007aff;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
    `
 
 const ActionButtonsPlace = styled.div`
@@ -85,8 +92,38 @@ const ActionButtonsPlace = styled.div`
     justify-content: left;
    `
 const SwiperContainer = styled.div`
+    z-index: -1;
     width: 100%;
     height: ${props => `${props.height}vh`};
+   `
+
+const Info = styled.div`
+    display: block;
+    width: 35%;
+    position: absolute;
+    left: 42px;
+    bottom: 71px;
+   `
+
+const Title = styled.div`
+    width: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.67;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+   `
+
+const Description = styled.div`
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(255, 255, 255, .3);
    `
 
 export default Slideshow

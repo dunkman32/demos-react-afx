@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React, {useEffect, useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 import image from './zura.jpg'
 import styled from 'styled-components'
 
@@ -7,9 +7,9 @@ import Button from './components/button'
 import Input from './components/input'
 import './App.css'
 import CircularProgressbarComponent from './components/circular-progressbar/circular-progressbar-component'
-import Slider from './components/slider-element/slider'
 import images from './images'
 import SwiperElement from './components/swiper-element'
+import Login from "./views/login";
 
 const todoItem = (handleUpdate, handleDelete) => todo => <Div key={todo.id}>
   <Span>{todo.name}</Span>
@@ -67,38 +67,43 @@ const App = () => {
     }
   }, [isPostedTodo])
 
-  const multySlides = {
-    slides: images,
-    slidesPerView: 4,
-    height: 30,
-    spaceBetween: 10,
-    loop: false,
-    slidesPerGroup: 3,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-  }
-  const singleSlide = {
-    slides: images,
-    slidesPerView: 1,
-    loop: true,
-    parallax: true,
-    slidesPerGroup: 1,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-  }
+  // const multySlides = {
+  //   slides: images,
+  //   slidesPerView: 4,
+  //   height: 30,
+  //   spaceBetween: 10,
+  //   loop: false,
+  //   slidesPerGroup: 3,
+  //   // autoplay: {
+  //   //   delay: 2500,
+  //   //   disableOnInteraction: false,
+  //   // },
+  // }
+  // const singleSlide = {
+  //   slides: images,
+  //   slidesPerView: 1,
+  //   loop: true,
+  //   parallax: true,
+  //   slidesPerGroup: 1,
+  //   // autoplay: {
+  //   //   delay: 2500,
+  //   //   disableOnInteraction: false,
+  //   // },
+  // }
 
   return (
     <div className="App">
       {/* <Slider slides={images} /> */}
-      <SwiperElement properties={multySlides}/>
-      <br/>
-      <br/>
-      <br/>
-      <SwiperElement properties={singleSlide}/>
+      {/*<SwiperElement properties={multySlides}/>*/}
+      {/*<br/>*/}
+      {/*<br/>*/}
+      {/*<br/>*/}
+      {/*<SwiperElement properties={singleSlide}/>*/}
+      <Login>
+        <div style={{position: "absolute", right: 0, top: 10, width: 200, height: 200, background: 'blue'}}>
+          hahbaksbk
+        </div>
+      </Login>
       <CircularProgressbarComponent
         width={'184px'}
         image={image}
