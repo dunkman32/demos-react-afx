@@ -100,7 +100,7 @@ const App = () => {
       {/*<br/>*/}
       {/*<SwiperElement properties={singleSlide}/>*/}
       <Login>
-        <div style={{position: "absolute", right: 0, top: 10, width: 200, height: 200, background: 'blue'}}>
+        <div style={{position: "absolute", right: 0, top: 10, width: 200, height: 200, background: 'blue', zIndex: 1}}>
           hahbaksbk
         </div>
       </Login>

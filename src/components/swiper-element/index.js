@@ -92,7 +92,6 @@ const ActionButtonsPlace = styled.div`
     justify-content: left;
    `
 const SwiperContainer = styled.div`
-    z-index: -1;
     width: 100%;
     height: ${props => `${props.height}vh`};
    `
